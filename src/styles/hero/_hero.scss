@@ -1,0 +1,27 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  background-image: url('../../assets/hero.png');
+  background-position: center center;
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+
+  .headline {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-magenta);
+  }
+
+  .sub-headline {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--color-white);
+  }
+}

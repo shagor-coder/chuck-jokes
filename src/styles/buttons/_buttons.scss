@@ -1,0 +1,53 @@
+.cj-btn {
+  min-width: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 14px;
+  font-weight: 689;
+  font-stretch: normal;
+  text-transform: uppercase;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  --webkit-appearance: none;
+  color: #fff;
+
+  &.adult-jokes {
+    background-color: var(--color-appleRed);
+  }
+  &.dad-jokes {
+    background-color: var(--color-pastalOrange);
+  }
+  &.cristmas-jokes {
+    background-color: var(--color-paleOrange);
+  }
+  &.job-jokes {
+    background-color: var(--color-lightGold);
+    border: 1px solid var(--color-darkGrey);
+    color: var(--color-darkGrey);
+  }
+  &.bd-jokes {
+    background-color: var(--color-kiwiGreen);
+  }
+  &.social-jokes {
+    background-color: var(--color-weirdGreen);
+  }
+  &.puns-jokes {
+    background-color: var(--color-skyBlue);
+  }
+  &.outlined {
+    background-color: transparent;
+    border: 1px solid var(--color-darkMagenta);
+    color: var(--color-darkMagenta);
+  }
+}

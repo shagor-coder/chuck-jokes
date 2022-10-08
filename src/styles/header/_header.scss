@@ -1,0 +1,36 @@
+.header {
+  background-color: var(--color-dark);
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      a {
+        color: var(--color-white);
+        text-decoration: none;
+      }
+    }
+
+    .menus {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      list-style: none;
+
+      .menu-items {
+        margin-left: 30px;
+
+        .menu-link {
+          font-size: 15px;
+          text-transform: uppercase;
+          color: var(--color-white);
+          font-weight: 600;
+          text-decoration: none;
+          display: inline-flex;
+          padding: 20px 30px;
+        }
+      }
+    }
+  }
+}
