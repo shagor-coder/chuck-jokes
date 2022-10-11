@@ -2,7 +2,7 @@ import React from 'react'
 import { Anchor } from './Anchor'
 import Thunder from '../assets/thunder.png'
 
-export const Cards = ({ header, description, link }) => {
+export const Cards = ({ header, description, link, id }) => {
   return (
     <div className='card'>
       <div className='card-header'>
@@ -17,7 +17,7 @@ export const Cards = ({ header, description, link }) => {
         <p>{description}</p>
       </div>
       <div className='card-footer'>
-        <Anchor text='Learn More' url={link} />
+        <Anchor id={id} text='Learn More' url={link} />
       </div>
     </div>
   )

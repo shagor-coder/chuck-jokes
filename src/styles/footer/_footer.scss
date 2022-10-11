@@ -1,0 +1,20 @@
+.footer {
+  min-height: 388px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url('../../assets/footer.png');
+  background-position: center center;
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--color-white);
+    line-height: 1.2;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+}

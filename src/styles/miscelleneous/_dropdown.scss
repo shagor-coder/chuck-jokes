@@ -7,51 +7,100 @@
   height: 100%;
 
   .dropdown-button {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: var(--color-magenta);
     border: none;
     outline: none;
     color: var(--color-white);
     height: auto;
     cursor: pointer;
+    z-index: 11;
+
+    span {
+      &:nth-child(1) {
+        margin-right: 10px;
+      }
+
+      &:nth-child(3) {
+        margin-left: 20px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0 0 0 / 15%);
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
   }
 
   .dropdown-body {
     padding: 10px 20px 20px;
     background-color: var(--color-white);
-    border-radius: 10px;
+    border-radius: 5px;
     position: absolute;
     top: calc(100% + 20px);
     width: 100%;
     transition: all 0.3s ease-in-out;
-    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 11;
+    opacity: 0;
+    visibility: hidden;
 
-    &.hide {
-      visibility: hidden;
-      opacity: 0;
+    span {
+      position: absolute;
+      right: 25px;
+      top: -18px;
+      color: #fff;
+      font-size: 30px;
     }
-    &.show {
+
+    .dropdown-items-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      .dropdown-items {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+        color: var(--color-darkGrey);
+        text-decoration: none;
+        padding: 8px 5px;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--color-paleGrey);
+        }
+        &:last-child {
+          color: var(--color-magenta);
+        }
+      }
+    }
+  }
+
+  &.show {
+    .overlay {
+      display: block;
       visibility: visible;
       opacity: 1;
     }
 
-    .dropdown-items {
-      display: block;
-      font-size: 14px;
-      font-weight: 400;
-      font-style: normal;
-      line-height: 1.43;
-      letter-spacing: normal;
-      color: var(--color-darkGrey);
-      text-decoration: none;
-      padding: 8px 5px;
-      border-bottom: 1px solid var(--color-paleGrey);
+    .dropdown-body {
+      visibility: visible;
+      opacity: 1;
     }
   }
 }

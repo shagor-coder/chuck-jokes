@@ -1,0 +1,112 @@
+.search-container {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+
+  & > div {
+    height: 50px;
+
+    .wrapper {
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      background-color: transparent;
+
+      &:focus {
+        background-color: var(--color-white);
+        color: var(--color-dark);
+      }
+
+      & > .fDbOPw {
+        flex-direction: row-reverse;
+        min-height: 50px;
+        align-items: stretch;
+
+        svg {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          fill: var(--color-white);
+
+          &.search-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+          }
+        }
+
+        .clear-icon svg {
+          width: 20px;
+          height: 20px;
+          margin-left: 5px;
+        }
+
+        input {
+          color: var(--color-white);
+          height: auto;
+          width: 100%;
+          padding: 10px 40px;
+          width: 100%;
+          border: 1px solid var(--color-white);
+          border-radius: 5px;
+          background-color: transparent;
+          color: var(--color-white);
+          font-size: 16px;
+          font-family: 'Montserrat';
+          z-index: 0;
+
+          &:focus {
+            color: var(--color-dark);
+            background-color: var(--color-white);
+          }
+          &:focus + .clear-icon svg {
+            fill: var(--color-dark);
+          }
+        }
+      }
+
+      & > .hCpHso {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: calc(100% + 20px);
+        background-color: var(--color-white);
+        border-radius: 2px;
+        padding: 10px;
+
+        .line {
+          display: none;
+        }
+
+        ul {
+          padding-bottom: 0;
+
+          li {
+            padding: 15px 5px;
+            cursor: pointer;
+
+            &:not(:last-child) {
+              border-bottom: 1px solid var(--color-paleGrey);
+            }
+
+            &.selected {
+              background-color: transparent;
+            }
+
+            div {
+              color: var(--color-paleGrey);
+              font-size: 16px;
+              font-weight: 500;
+              font-family: 'Montserrat';
+            }
+          }
+        }
+      }
+    }
+  }
+}

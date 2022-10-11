@@ -6,9 +6,6 @@ export const Header = () => {
     <header className='header'>
       <div className='container'>
         <nav>
-          <div className='logo'>
-            <a href='#'>Logo</a>
-          </div>
           <ul className='menus'>
             <li className='menu-items'>
               <a href='#' className='menu-link'>
@@ -23,10 +20,16 @@ export const Header = () => {
             <li className='menu-items'>
               <Dropdown text='MEIN BEREICH' className='menu-link'>
                 <a href='#' className='dropdown-items'>
-                  SONDERANGEBOTE
+                  My published jokes
                 </a>
                 <a href='#' className='dropdown-items'>
-                  SONDERANGEBOTE
+                  My saved jokes
+                </a>
+                <a href='#' className='dropdown-items'>
+                  Account Information
+                </a>
+                <a href='#' className='dropdown-items'>
+                  Publish new joke
                 </a>
               </Dropdown>
             </li>
