@@ -22,31 +22,60 @@
   appearance: none;
   --webkit-appearance: none;
   color: #fff;
+  font-family: 'Montserrat';
 
-  &.adult-jokes {
+  &.history-jokes {
     background-color: var(--color-appleRed);
   }
-  &.dad-jokes {
+  &.career-jokes {
     background-color: var(--color-pastalOrange);
   }
-  &.cristmas-jokes {
+  &.celebrity-jokes {
     background-color: var(--color-paleOrange);
   }
-  &.job-jokes {
+  &.dev-jokes {
     background-color: var(--color-lightGold);
     border: 1px solid var(--color-darkGrey);
     color: var(--color-darkGrey);
   }
-  &.bd-jokes {
+  &.explicit-jokes {
     background-color: var(--color-kiwiGreen);
   }
-  &.social-jokes {
+  &.money-jokes {
     background-color: var(--color-weirdGreen);
   }
-  &.puns-jokes {
+
+  &.food-jokes {
     background-color: var(--color-skyBlue);
   }
-  &.view-all {
+
+  &.movie-jokes {
+    background-color: var(--color-appleRed);
+  }
+
+  &.music-jokes {
+    background-color: var(--color-pastalOrange);
+  }
+  &.political-jokes {
+    background-color: var(--color-paleOrange);
+  }
+  &.religion-jokes {
+    background-color: var(--color-lightGold);
+    border: 1px solid var(--color-darkGrey);
+    color: var(--color-darkGrey);
+  }
+  &.science-jokes {
+    background-color: var(--color-kiwiGreen);
+  }
+  &.sport-jokes {
+    background-color: var(--color-weirdGreen);
+  }
+
+  &.u-jokes {
+    background-color: var(--color-appleRed);
+  }
+
+  &.all-jokes {
     background-color: transparent;
     border: 1px solid var(--color-darkMagenta);
     color: var(--color-darkMagenta);

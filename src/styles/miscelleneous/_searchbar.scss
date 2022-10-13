@@ -22,7 +22,7 @@
         color: var(--color-dark);
       }
 
-      & > .fDbOPw {
+      & > div:nth-child(1) {
         flex-direction: row-reverse;
         min-height: 50px;
         align-items: stretch;
@@ -73,7 +73,7 @@
         }
       }
 
-      & > .hCpHso {
+      & > div:nth-child(2) {
         position: absolute;
         width: 100%;
         height: auto;

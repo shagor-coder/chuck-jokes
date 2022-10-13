@@ -8,15 +8,25 @@ export const jokesReducer = (state, action) => {
         ...d,
         likes: 0,
         dislikes: 0,
+        categories: d.categories?.length ? d.categories[0] : 'uncategorized',
       }))
       if (localStorage.getItem('cj-jokes') === null) {
         localStorage.setItem('cj-jokes', JSON.stringify(jokesWLD))
       }
       return { ...state, data: jokesWLD, isLoading: false }
     case ACTIONS.GET_ALL:
+      const sortedData = jokesData.sort((a, b) => {
+        if (a.categories < b.categories) {
+          return -1
+        }
+        if (a.categories > b.categories) {
+          return 1
+        }
+        return 0
+      })
       return {
         ...state,
-        data: action.payload ? action.payload : jokesData,
+        data: sortedData,
         isLoading: false,
       }
 
