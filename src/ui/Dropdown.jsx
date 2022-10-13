@@ -8,7 +8,6 @@ export const Dropdown = ({ children, text = 'Dropdown', className }) => {
       <button
         className={`dropdown-button ${className}`}
         type='button'
-        role='button'
         onClick={() => {
           setShow(!show)
         }}
