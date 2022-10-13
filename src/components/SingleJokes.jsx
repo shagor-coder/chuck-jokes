@@ -1,14 +1,12 @@
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
-import { getSingleJoke } from '../context/GetSingleJoke'
-import { JokesContext } from '../context/JokesContext'
+import { useGetSingleJoke } from '../hooks/useGetSingleJoke'
+import { useJokesContext } from '../hooks/useJokesContext'
 import { SingleCard } from '../ui/SingleCard'
 export const SingleJokes = () => {
-  const { state, dispatch } = useContext(JokesContext)
+  const { state } = useJokesContext()
   const { id } = useParams()
-  useEffect(() => {
-    return getSingleJoke(dispatch, id)
-  }, [state.data, dispatch, id])
+  useGetSingleJoke(id)
   return (
     <div className='container'>
       {!state.isLoading && (

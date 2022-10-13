@@ -1,14 +1,14 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactPaginate from 'react-paginate'
 import { JokesCards } from './JokesCards'
-import { JokesContext } from '../context/JokesContext'
+import { useJokesContext } from '../hooks/useJokesContext'
 
 export const Pagination = ({ itemsPerPage }) => {
   const [pageCount, setPageCount] = useState(0)
   const [itemOffset, setItemOffset] = useState(0)
   const [currentJokes, setcurrentJokes] = useState([])
 
-  const { state } = useContext(JokesContext)
+  const { state } = useJokesContext()
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage
     setcurrentJokes(state.data?.slice(itemOffset, endOffset))

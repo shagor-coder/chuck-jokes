@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Dropdown } from '../ui/Dropdown'
 
 export const Header = () => {
@@ -8,29 +9,29 @@ export const Header = () => {
         <nav>
           <ul className='menus'>
             <li className='menu-items'>
-              <a href='#' className='menu-link'>
+              <Link to='/' className='menu-link'>
                 SO FUNKTIONIERTS
-              </a>
+              </Link>
             </li>
             <li className='menu-items'>
-              <a href='#' className='menu-link'>
+              <Link to='/' className='menu-link'>
                 SONDERANGEBOTE
-              </a>
+              </Link>
             </li>
             <li className='menu-items'>
               <Dropdown text='MEIN BEREICH' className='menu-link'>
-                <a href='#' className='dropdown-items'>
+                <Link to='/' className='dropdown-items'>
                   My published jokes
-                </a>
-                <a href='#' className='dropdown-items'>
+                </Link>
+                <Link to='/' className='dropdown-items'>
                   My saved jokes
-                </a>
-                <a href='#' className='dropdown-items'>
+                </Link>
+                <Link to='/' className='dropdown-items'>
                   Account Information
-                </a>
-                <a href='#' className='dropdown-items'>
+                </Link>
+                <Link to='/' className='dropdown-items'>
                   Publish new joke
-                </a>
+                </Link>
               </Dropdown>
             </li>
           </ul>

@@ -40,10 +40,13 @@
           }
         }
 
-        .clear-icon svg {
-          width: 20px;
-          height: 20px;
-          margin-left: 5px;
+        .clear-icon {
+          margin: 0;
+          svg {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+          }
         }
 
         input {

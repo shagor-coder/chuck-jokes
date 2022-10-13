@@ -1,6 +1,7 @@
 import { useReducer, createContext, useEffect, useState } from 'react'
+import { Loading } from '../ui/Loading'
 import { jokesReducer } from './jokesReducer'
-import { setAllJokes } from './SetData'
+import { setAllJokes } from './setDataLocally'
 const jokesInterFace = {
   data: [
     {
@@ -30,7 +31,7 @@ export const JokesProvider = ({ children }) => {
   }, [])
   return (
     <JokesContext.Provider value={{ state, dispatch }}>
-      {isLoading ? 'Loading' : children}
+      {isLoading ? <Loading /> : children}
     </JokesContext.Provider>
   )
 }

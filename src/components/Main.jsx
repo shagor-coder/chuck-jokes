@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from 'react'
-import { JokesContext } from '../context/JokesContext'
+import React from 'react'
 import { Button } from '../ui/Button'
 import { Pagination } from './Pagination'
-import { ACTIONS } from '../action/ACTIONS'
+import { useGetAllJoke } from '../hooks/useGetAllJokes'
 
 const buttos = [
   {
@@ -40,10 +39,11 @@ const buttos = [
 ]
 
 export const Main = () => {
-  const { dispatch } = useContext(JokesContext)
-  useEffect(() => {
-    return dispatch({ type: ACTIONS.GET_ALL })
-  }, [dispatch])
+  // const { dispatch } = useJokesContext()
+  // useEffect(() => {
+  //   return dispatch({ type: ACTIONS.GET_ALL })
+  // }, [dispatch])
+  useGetAllJoke()
   return (
     <main className='main'>
       <div className='container'>

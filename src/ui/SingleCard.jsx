@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { ACTIONS } from '../action/ACTIONS'
 import { Dislikes } from '../components/Dislikes'
 import { Likes } from '../components/Likes'
-import { JokesContext } from '../context/JokesContext'
+import { useJokesContext } from '../hooks/useJokesContext'
 
 export const SingleCard = ({ header, description, id, likes, dislikes }) => {
-  const { dispatch } = useContext(JokesContext)
+  const { dispatch } = useJokesContext()
   const handleLike = () => {
     dispatch({ type: ACTIONS.LIKES, payload: id })
   }
