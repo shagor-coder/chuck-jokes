@@ -1,0 +1,19 @@
+.joke-details {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+
+  .sidebar {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-fadeGrey);
+    padding: 20px;
+
+    .top-jokes {
+      font-size: 16px;
+      color: var(--color-darkGrey);
+      font-weight: 500;
+      text-decoration: underline;
+      text-transform: capitalize;
+    }
+  }
+}

@@ -4,7 +4,7 @@
   justify-content: space-between;
   max-width: 120px;
   gap: 15px;
-  margin-top: 30px;
+  margin-top: 20px;
 
   & > div {
     span {
@@ -13,21 +13,46 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      font-size: 14px;
-      color: var(--color-darkGrey);
+      font-size: 12px;
+      font-weight: 700;
 
       button {
-        padding: 10px;
-        font-size: 14px;
-        color: var(--color-darkGrey);
+        width: 44px;
+        height: 44px;
+        padding: 5px;
+        font-size: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-white);
+        transition: all 0.3s ease-in-out;
         cursor: pointer;
-        background-color: var(--color-kiwiGreen);
-        border-radius: 3px;
+        border-radius: 50%;
         outline: none;
         border: none;
         &:hover {
           background-color: var(--color-weirdGreen);
         }
+
+        &.like-btn {
+          background-color: var(--color-weirdGreen);
+          &:hover {
+            background-color: var(--color-kiwiGreen);
+          }
+        }
+
+        &.dislike-btn {
+          background-color: var(--color-appleRed);
+          &:hover {
+            background-color: #e72121;
+          }
+        }
+      }
+      &.likes-counter {
+        color: var(--color-weirdGreen);
+      }
+      &.dislikes-counter {
+        color: var(--color-appleRed);
       }
     }
   }

@@ -1,24 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
-
-const items = [
-  {
-    id: 1,
-    name: 'Name',
-  },
-  {
-    id: 2,
-    name: 'Name2',
-  },
-  {
-    id: 3,
-    name: 'Name3',
-  },
-  {
-    id: 4,
-    name: 'Name4',
-  },
-]
+import { useJokesContext } from '../hooks/useJokesContext'
 
 const handleOnHover = () => {
   console.log('Hover')
@@ -29,10 +11,18 @@ const handleOnFocus = (event) => {
 }
 
 export const SearchBar = () => {
+  const [searchItems, setSearchItems] = useState()
+  const { state } = useJokesContext()
+  useEffect(() => {
+    const searchItems = state.data?.map((d) => {
+      return { ...d, name: d.value }
+    })
+    return setSearchItems(searchItems)
+  }, [state.data])
   return (
     <>
       <ReactSearchAutocomplete
-        items={items}
+        items={searchItems}
         onHover={handleOnHover}
         onFocus={handleOnFocus}
       />

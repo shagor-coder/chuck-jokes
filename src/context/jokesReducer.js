@@ -27,14 +27,13 @@ export const jokesReducer = (state, action) => {
       return {
         ...state,
         data: sortedData,
-        isLoading: false,
       }
 
     case ACTIONS.CATEGORIES:
       return {
         ...state,
         data: state.data.filter((data) => {
-          return data.categories.includes('explicit')
+          return data.categories.includes(action.payload)
         }),
       }
 
@@ -43,7 +42,6 @@ export const jokesReducer = (state, action) => {
       return {
         ...state,
         single: singleJokes,
-        isLoading: false,
       }
 
     case ACTIONS.LIKES:
@@ -54,7 +52,6 @@ export const jokesReducer = (state, action) => {
       return {
         ...state,
         data: updatedLikeData,
-        isRender: true,
       }
     case ACTIONS.DISLIKES:
       const updatedDislikeData = jokesData.map((d) => {
@@ -64,7 +61,6 @@ export const jokesReducer = (state, action) => {
       return {
         ...state,
         data: updatedDislikeData,
-        isRender: true,
       }
     default:
       return state

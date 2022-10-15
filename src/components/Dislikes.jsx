@@ -1,13 +1,14 @@
 import React from 'react'
+import { BsHandThumbsDown } from 'react-icons/bs'
 
 export const Dislikes = ({ onclick, dislikes, id }) => {
   return (
     <div>
       <span>
-        <button id={id} onClick={onclick}>
-          Dislikes
+        <button className='dislike-btn' id={id} onClick={onclick}>
+          <BsHandThumbsDown />
         </button>
-        <span>{dislikes}</span>
+        <span className='dislikes-counter'>{dislikes}</span>
       </span>
     </div>
   )

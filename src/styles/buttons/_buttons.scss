@@ -24,58 +24,54 @@
   color: #fff;
   font-family: 'Montserrat';
 
-  &.history-jokes {
+  &.history {
     background-color: var(--color-appleRed);
   }
-  &.career-jokes {
+  &.career {
     background-color: var(--color-pastalOrange);
   }
-  &.celebrity-jokes {
+  &.celebrity {
     background-color: var(--color-paleOrange);
   }
-  &.dev-jokes {
+  &.dev {
     background-color: var(--color-lightGold);
     border: 1px solid var(--color-darkGrey);
     color: var(--color-darkGrey);
   }
-  &.explicit-jokes {
+  &.explicit {
     background-color: var(--color-kiwiGreen);
   }
-  &.money-jokes {
+  &.money {
     background-color: var(--color-weirdGreen);
   }
 
-  &.food-jokes {
+  &.food {
     background-color: var(--color-skyBlue);
   }
 
-  &.movie-jokes {
+  &.movie {
     background-color: var(--color-appleRed);
   }
 
-  &.music-jokes {
+  &.music {
     background-color: var(--color-pastalOrange);
   }
-  &.political-jokes {
+  &.political {
     background-color: var(--color-paleOrange);
   }
-  &.religion-jokes {
+  &.religion {
     background-color: var(--color-lightGold);
     border: 1px solid var(--color-darkGrey);
     color: var(--color-darkGrey);
   }
-  &.science-jokes {
+  &.science {
     background-color: var(--color-kiwiGreen);
   }
-  &.sport-jokes {
+  &.sport {
     background-color: var(--color-weirdGreen);
   }
 
-  &.u-jokes {
-    background-color: var(--color-appleRed);
-  }
-
-  &.all-jokes {
+  &.all {
     background-color: transparent;
     border: 1px solid var(--color-darkMagenta);
     color: var(--color-darkMagenta);
