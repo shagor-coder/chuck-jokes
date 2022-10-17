@@ -12,7 +12,6 @@ export const SingleJokes = ({ id, category }) => {
     return navigate('/')
   }
   useEffect(() => {
-    console.log(category)
     if (!category.length) return
     if (category !== '') return navigate(`/${category}/${id}`)
   }, [id, category, navigate])

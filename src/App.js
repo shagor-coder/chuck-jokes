@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Single } from './pages/Single'
 import { Category } from './pages/Category'
 
-import './styles/App.scss'
+import './styles/app.scss'
 
 export const App = () => {
   return (
