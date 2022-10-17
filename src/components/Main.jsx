@@ -11,7 +11,7 @@ export const Main = () => {
   const { state } = useJokesContext()
   const navigate = useNavigate()
   useEffect(() => {
-    const cate = state.data.map((d) => {
+    const cate = state.data?.map((d) => {
       return d?.categories && d.categories
     })
 
