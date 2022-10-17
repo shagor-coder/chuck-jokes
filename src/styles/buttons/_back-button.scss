@@ -1,6 +1,12 @@
+@import '../colors/colors';
+@import '../variables/fonts';
+@import '../variables/mixins';
+
 .back-buttoncon {
   margin-top: 20px;
   margin-bottom: 20px;
+  @include flex(center, flex-start);
+  gap: 20px;
 
   .back-button {
     width: 40px;
@@ -11,9 +17,9 @@
     padding: 5px;
     outline: none;
     border: none;
-    background-color: var(--color-darkGrey);
-    font-size: 20px;
-    color: var(--color-white);
+    background-color: $color-darkGrey;
+    font-size: $fs-lg;
+    color: $color-white;
     border-radius: 47% 53% 53% 47% / 35% 17% 83% 65%;
     cursor: pointer;
   }

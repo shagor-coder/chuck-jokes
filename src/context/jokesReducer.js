@@ -10,12 +10,8 @@ export const jokesReducer = (state, action) => {
         dislikes: 0,
         categories: d.categories?.length ? d.categories[0] : 'uncategorized',
       }))
-      if (localStorage.getItem('cj-jokes') === null) {
-        localStorage.setItem('cj-jokes', JSON.stringify(jokesWLD))
-      }
-      return { ...state, data: jokesWLD, isLoading: false }
-    case ACTIONS.GET_ALL:
-      const sortedData = jokesData.sort((a, b) => {
+
+      const sortedData = jokesWLD.sort((a, b) => {
         if (a.categories < b.categories) {
           return -1
         }
@@ -24,9 +20,15 @@ export const jokesReducer = (state, action) => {
         }
         return 0
       })
+
+      if (localStorage.getItem('cj-jokes') === null) {
+        localStorage.setItem('cj-jokes', JSON.stringify(sortedData))
+      }
+      return { ...state, data: jokesWLD, isLoading: false }
+    case ACTIONS.GET_ALL:
       return {
         ...state,
-        data: sortedData,
+        data: jokesData,
       }
 
     case ACTIONS.CATEGORIES:
@@ -53,6 +55,7 @@ export const jokesReducer = (state, action) => {
         ...state,
         data: updatedLikeData,
       }
+
     case ACTIONS.DISLIKES:
       const updatedDislikeData = jokesData.map((d) => {
         return action.payload === d.id ? { ...d, dislikes: d.dislikes + 1 } : d
@@ -62,6 +65,29 @@ export const jokesReducer = (state, action) => {
         ...state,
         data: updatedDislikeData,
       }
+
+    case ACTIONS.NEXT:
+      const currentIndexForNext = jokesData.find((d) => {
+        return d.id === action.payload
+      })
+      let newIndexForNext = jokesData.indexOf(currentIndexForNext)
+
+      return {
+        ...state,
+        single: jokesData[newIndexForNext + 1],
+      }
+
+    case ACTIONS.PREV:
+      const currentIndexForPrev = jokesData.find((d) => {
+        return d.id === action.payload
+      })
+      let newIndexForPrev = jokesData.indexOf(currentIndexForPrev)
+
+      return {
+        ...state,
+        single: jokesData[newIndexForPrev - 1],
+      }
+
     default:
       return state
   }

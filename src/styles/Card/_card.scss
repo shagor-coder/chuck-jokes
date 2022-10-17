@@ -1,13 +1,15 @@
+@use '../colors/colors';
+@use '../variables/fonts';
+@use '../variables/mixins';
+
 .card {
   height: 100%;
   min-height: 264px;
   max-height: 300px;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: stretch;
+  @include mixins.flex(stretch, center);
   padding: 16px;
-  background-color: var(--color-white);
+  background-color: $color-white;
   border: 1px solid #ecebe9;
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
@@ -18,12 +20,9 @@
   .card-header {
     width: 100%;
     h2 {
-      font-size: 16px;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--color-dark);
-      line-height: 1.25;
+      @include mixins.headlines(16, $color-dark);
       text-align: left;
+      text-transform: uppercase;
 
       span {
         margin-right: 5px;
@@ -35,10 +34,10 @@
     width: 100%;
     margin-top: 25px;
     p {
-      font-size: 14px;
+      font-size: fonts.$fs-sm;
       font-weight: 400;
       line-height: 1.57;
-      color: var(--color-dark);
+      color: $color-dark;
       text-align: left;
     }
   }

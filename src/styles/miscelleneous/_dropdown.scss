@@ -1,20 +1,17 @@
+@import '../variables/mixins';
 .dropdown-container {
   min-width: 130px;
   position: relative;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
+  @include flex(stretch, center);
   height: 100%;
 
   .dropdown-button {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: var(--color-magenta);
+    @include flex(stretch, space-evenly);
+    background-color: $color-magenta;
     border: none;
     outline: none;
-    color: var(--color-white);
+    color: $color-white;
     height: auto;
     cursor: pointer;
     z-index: 11;
@@ -44,7 +41,7 @@
 
   .dropdown-body {
     padding: 10px 20px 20px;
-    background-color: var(--color-white);
+    background-color: $color-white;
     border-radius: 5px;
     position: absolute;
     top: calc(100% + 20px);
@@ -62,7 +59,7 @@
       position: absolute;
       right: 25px;
       top: -18px;
-      color: #fff;
+      color: $color-white;
       font-size: 30px;
     }
 
@@ -77,15 +74,15 @@
         font-style: normal;
         line-height: 1.43;
         letter-spacing: normal;
-        color: var(--color-darkGrey);
+        color: $color-darkGrey;
         text-decoration: none;
         padding: 8px 5px;
 
         &:not(:last-child) {
-          border-bottom: 1px solid var(--color-paleGrey);
+          border-bottom: 1px solid $color-paleGrey;
         }
         &:last-child {
-          color: var(--color-magenta);
+          color: $color-magenta;
         }
       }
     }

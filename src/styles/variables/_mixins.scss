@@ -1,0 +1,23 @@
+@use 'sass:map';
+@import '../variables/breakpoints';
+@import '../colors/colors';
+
+@mixin headlines($size, $color) {
+  font-size: #{$size}px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+  color: $color;
+}
+
+@mixin flex($items, $content) {
+  display: flex;
+  align-items: $items;
+  justify-content: $content;
+}
+
+@mixin media($breakpoint) {
+  @media only screen and (max-width: map.get($breakPoints, $breakpoint)) {
+    @content;
+  }
+}

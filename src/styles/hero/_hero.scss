@@ -1,3 +1,4 @@
+@import '../variables/mixins';
 .hero {
   display: flex;
   align-items: center;
@@ -11,17 +12,12 @@
 
   .headline {
     text-align: center;
-    font-size: 48px;
+    @include headlines(48, $color-magenta);
     font-weight: 400;
-    line-height: 1.5;
-    color: var(--color-magenta);
   }
 
   .sub-headline {
     text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 1.5;
-    color: var(--color-white);
+    @include headlines(30, $color-white);
   }
 }

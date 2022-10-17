@@ -1,17 +1,16 @@
+@import '../variables/mixins';
+@import '../variables/fonts';
+
 .likes-dislikes {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flex(center, space-between);
   max-width: 120px;
   gap: 15px;
   margin-top: 20px;
 
   & > div {
     span {
-      display: flex;
+      @include flex(center, center);
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       gap: 10px;
       font-size: 12px;
       font-weight: 700;
@@ -20,39 +19,39 @@
         width: 44px;
         height: 44px;
         padding: 5px;
-        font-size: 18px;
+        font-size: $fs-lg;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        color: var(--color-white);
+        color: $color-white;
         transition: all 0.3s ease-in-out;
         cursor: pointer;
         border-radius: 50%;
         outline: none;
         border: none;
         &:hover {
-          background-color: var(--color-weirdGreen);
+          background-color: $color-weirdGreen;
         }
 
         &.like-btn {
-          background-color: var(--color-weirdGreen);
+          background-color: $color-weirdGreen;
           &:hover {
-            background-color: var(--color-kiwiGreen);
+            background-color: $color-kiwiGreen;
           }
         }
 
         &.dislike-btn {
-          background-color: var(--color-appleRed);
+          background-color: $color-appleRed;
           &:hover {
             background-color: #e72121;
           }
         }
       }
       &.likes-counter {
-        color: var(--color-weirdGreen);
+        color: $color-weirdGreen;
       }
       &.dislikes-counter {
-        color: var(--color-appleRed);
+        color: $color-appleRed;
       }
     }
   }

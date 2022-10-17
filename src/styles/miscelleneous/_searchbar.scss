@@ -3,6 +3,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  position: relative;
+  z-index: 10;
 
   & > div {
     height: 50px;
@@ -18,8 +20,8 @@
       background-color: transparent;
 
       &:focus {
-        background-color: var(--color-white);
-        color: var(--color-dark);
+        background-color: $color-white;
+        color: $color-dark;
       }
 
       & > div:nth-child(1) {
@@ -31,7 +33,7 @@
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          fill: var(--color-white);
+          fill: $color-white;
 
           &.search-icon {
             width: 30px;
@@ -50,25 +52,25 @@
         }
 
         input {
-          color: var(--color-white);
+          color: $color-white;
           height: auto;
           width: 100%;
           padding: 10px 40px;
           width: 100%;
-          border: 1px solid var(--color-white);
+          border: 1px solid $color-white;
           border-radius: 5px;
           background-color: transparent;
-          color: var(--color-white);
+          color: $color-white;
           font-size: 16px;
           font-family: 'Montserrat';
           z-index: 0;
 
           &:focus {
-            color: var(--color-dark);
-            background-color: var(--color-white);
+            color: $color-dark;
+            background-color: $color-white;
           }
           &:focus + .clear-icon svg {
-            fill: var(--color-dark);
+            fill: $color-dark;
           }
         }
       }
@@ -78,7 +80,7 @@
         width: 100%;
         height: auto;
         top: calc(100% + 20px);
-        background-color: var(--color-white);
+        background-color: $color-white;
         border-radius: 2px;
         padding: 10px;
 
@@ -94,7 +96,7 @@
             cursor: pointer;
 
             &:not(:last-child) {
-              border-bottom: 1px solid var(--color-paleGrey);
+              border-bottom: 1px solid $color-paleGrey;
             }
 
             &.selected {
@@ -102,7 +104,7 @@
             }
 
             div {
-              color: var(--color-paleGrey);
+              color: $color-paleGrey;
               font-size: 16px;
               font-weight: 500;
               font-family: 'Montserrat';

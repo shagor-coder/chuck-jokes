@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import { useJokesContext } from '../hooks/useJokesContext'
-
-const handleOnHover = () => {
-  console.log('Hover')
-}
-
-const handleOnFocus = (event) => {
-  console.log(event.target, 'Focus')
-}
 
 export const SearchBar = () => {
   const [searchItems, setSearchItems] = useState()
   const { state } = useJokesContext()
+  const navigate = useNavigate()
+
+  const handleoOnSeclect = (event) => {
+    navigate(`/${event.categories}`)
+  }
+
   useEffect(() => {
     const searchItems = state.data?.map((d) => {
-      return { ...d, name: d.value }
+      return { ...d, name: d.categories }
     })
     return setSearchItems(searchItems)
   }, [state.data])
@@ -23,8 +22,7 @@ export const SearchBar = () => {
     <>
       <ReactSearchAutocomplete
         items={searchItems}
-        onHover={handleOnHover}
-        onFocus={handleOnFocus}
+        onSelect={handleoOnSeclect}
       />
     </>
   )

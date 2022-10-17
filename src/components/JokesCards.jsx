@@ -9,7 +9,7 @@ export const JokesCards = ({ currentJokes }) => {
             key={joke?.id}
             header={joke.categories?.length ? joke.categories : 'Uncategorized'}
             description={joke.value?.substring(0, 300) + `...`}
-            link={joke?.id}
+            link={`/${joke.categories}/${joke?.id}`}
             id={joke?.id}
           />
         )

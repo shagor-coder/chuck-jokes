@@ -1,24 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useGetAllJoke } from '../hooks/useGetAllJokes'
 
 export const TrendingCat = ({ state }) => {
-  const [topCategories, setTopCategories] = useState()
+  useGetAllJoke()
+  const [topCategories, setTopCategories] = useState([''])
   useEffect(() => {
-    const topCat = state.data?.map((d) => {
-      let like = Number(d.likes)
-      return like > 5 && d.categories
+    let like = 0
+    let dislike = 0
+    const topCat = state?.map((d) => {
+      like = Number(d.likes)
+      dislike = Number(d.dislikes)
+      return like > 20 && dislike < 10 && d.categories
     })
 
-    const uniqueCategory = [...new Set(topCat)]
+    const filteredCate = topCat.filter((cat) => {
+      return cat !== false
+    })
+    const uniqueCategory = [...new Set(filteredCate)]
     return setTopCategories(uniqueCategory)
-  }, [state.data])
+  }, [state])
   return (
     <div>
-      {topCategories?.map((d) => (
-        <Link key={d} to={`/${d}`}>
-          <p className='top-jokes'>{d}</p>
-        </Link>
-      ))}
+      {topCategories &&
+        topCategories?.map((d) => (
+          <Link key={d} to={`/${d}`}>
+            <p className='top-jokes'>{d}</p>
+          </Link>
+        ))}
     </div>
   )
 }

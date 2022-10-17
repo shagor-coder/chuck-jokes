@@ -1,3 +1,6 @@
+@import '../variables/fonts';
+@import '../colors/colors';
+@import '../variables/mixins';
 .cj-btn {
   width: 100%;
   min-width: 200px;
@@ -8,12 +11,11 @@
   padding-right: 5px;
   padding-top: 14px;
   padding-bottom: 14px;
-  font-size: 14px;
-  font-weight: 689;
+  font-size: $fs-sm;
+  font-weight: 700;
   font-stretch: normal;
   text-transform: uppercase;
-  font-style: normal;
-  line-height: 1.43;
+  line-height: 1.5;
   letter-spacing: normal;
   text-align: center;
   outline: none;
@@ -24,56 +26,77 @@
   color: #fff;
   font-family: 'Montserrat';
 
+  @include media('md') {
+    min-width: max-content;
+  }
+
   &.history {
-    background-color: var(--color-appleRed);
+    background-color: $color-appleRed;
   }
   &.career {
-    background-color: var(--color-pastalOrange);
+    background-color: $color-pastalOrange;
   }
   &.celebrity {
-    background-color: var(--color-paleOrange);
+    background-color: $color-paleOrange;
   }
   &.dev {
-    background-color: var(--color-lightGold);
-    border: 1px solid var(--color-darkGrey);
-    color: var(--color-darkGrey);
+    background-color: $color-lightGold;
+    border: 1px solid $color-darkGrey;
+    color: $color-darkGrey;
   }
   &.explicit {
-    background-color: var(--color-kiwiGreen);
+    background-color: $color-kiwiGreen;
   }
   &.money {
-    background-color: var(--color-weirdGreen);
+    background-color: $color-weirdGreen;
   }
 
   &.food {
-    background-color: var(--color-skyBlue);
+    background-color: $color-skyBlue;
   }
 
   &.movie {
-    background-color: var(--color-appleRed);
+    background-color: $color-appleRed;
   }
 
   &.music {
-    background-color: var(--color-pastalOrange);
+    background-color: $color-pastalOrange;
   }
   &.political {
-    background-color: var(--color-paleOrange);
+    background-color: $color-paleOrange;
   }
   &.religion {
-    background-color: var(--color-lightGold);
-    border: 1px solid var(--color-darkGrey);
-    color: var(--color-darkGrey);
+    background-color: $color-lightGold;
+    border: 1px solid $color-darkGrey;
+    color: $color-darkGrey;
   }
   &.science {
-    background-color: var(--color-kiwiGreen);
+    background-color: $color-kiwiGreen;
   }
   &.sport {
-    background-color: var(--color-weirdGreen);
+    background-color: $color-weirdGreen;
   }
 
   &.all {
     background-color: transparent;
-    border: 1px solid var(--color-darkMagenta);
-    color: var(--color-darkMagenta);
+    border: 1px solid $color-darkMagenta;
+    color: $color-darkMagenta;
+  }
+
+  // Next And Prev Button
+
+  &.prev,
+  &.next {
+    min-width: 120px;
+    background-color: transparent;
+    border: 1px solid $color-darkMagenta;
+    color: $color-darkMagenta;
+
+    span {
+      display: flex;
+      &.icon {
+        margin-bottom: 2px;
+      }
+    }
   }
 }

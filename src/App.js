@@ -2,11 +2,13 @@ import React from 'react'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
-import { Main } from './components/Main'
-import { SingleJokes } from './components/SingleJokes'
 import { Home } from './pages/Home'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './styles/app.scss'
+
+import { Single } from './pages/Single'
+import { Category } from './pages/Category'
+
+import './styles/App.scss'
 
 export const App = () => {
   return (
@@ -14,11 +16,13 @@ export const App = () => {
       <div className='App'>
         <Header />
         <Hero />
-        <Routes>
-          <Route exact path='/' element={<Main />} />
-          <Route exact path='/:id' element={<SingleJokes />} />
-          <Route exact path='/about' element={<Home />} />
-        </Routes>
+        <main className='main'>
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/:category' element={<Category />} />
+            <Route exact path='/:category/:id' element={<Single />} />
+          </Routes>
+        </main>
         <Footer />
       </div>
     </BrowserRouter>

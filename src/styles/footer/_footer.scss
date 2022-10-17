@@ -1,8 +1,8 @@
+@import '../variables/mixins';
+
 .footer {
   min-height: 388px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  @include flex(center, flex-start);
   background-image: url('../../assets/footer.png');
   background-position: center center;
   background-size: cover;
@@ -10,10 +10,7 @@
   background-repeat: no-repeat;
 
   h2 {
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--color-white);
-    line-height: 1.2;
+    @include headlines(22, $color-white);
     max-width: 300px;
     margin-bottom: 20px;
   }

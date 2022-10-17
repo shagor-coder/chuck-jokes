@@ -30,7 +30,14 @@ export const Dropdown = ({ children, text = 'Dropdown', className }) => {
         <span>
           <FaCaretUp />
         </span>
-        <div className='dropdown-items-container'>{children}</div>
+        <div
+          onClick={() => {
+            setShow(!show)
+          }}
+          className='dropdown-items-container'
+        >
+          {children}
+        </div>
       </div>
     </div>
   )

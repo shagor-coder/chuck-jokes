@@ -1,12 +1,21 @@
-@use './colors';
-@use './buttons';
-@use './Card';
-@use './miscelleneous';
-@use './header';
-@use './hero';
-@use './main';
-@use './footer';
-@use './singlejoke';
+@import './buttons/buttons';
+@import './buttons/back-button';
+@import './Card/card';
+@import './miscelleneous/anchor';
+@import './miscelleneous/cards_grid';
+@import './miscelleneous/dropdown';
+@import './miscelleneous/likes-dislikes';
+@import './miscelleneous/loading';
+@import './miscelleneous/searchbar';
+@import './header/header';
+@import './hero/hero';
+@import './home/home';
+@import './footer/footer';
+@import './singlejoke/singlejoke';
+@import './category/category';
+@import './miscelleneous/pagination';
+@import './miscelleneous/next-prev';
+
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +32,8 @@
 }
 
 .main {
-  background-color: var(--color-offWhite);
+  padding: 50px 0;
+  background-color: $color-offWhite;
 }
 
 html {

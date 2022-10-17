@@ -1,0 +1,17 @@
+@import '../variables/mixins';
+
+.cards-container {
+  margin-top: 40px;
+  display: grid;
+  gap: 15px;
+  align-items: stretch;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+
+  @include media('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media('sm') {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
