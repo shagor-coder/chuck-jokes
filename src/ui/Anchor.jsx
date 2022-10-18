@@ -1,14 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { ArrowRight } from './ArrowRight'
 
-export const Anchor = ({ text, url, onclick, id }) => {
+export const Anchor = ({ text, onclick, id }) => {
   return (
-    <>
-      <Link id={id} onClick={onclick} className='anchor' to={`${url}`}>
+    <div>
+      <button id={id} onClick={onclick} className='anchor'>
         <span>{text}</span>
         <span> {<ArrowRight />} </span>
-      </Link>
-    </>
+      </button>
+    </div>
   )
 }
